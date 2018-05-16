@@ -103,7 +103,7 @@ public class NativeSettings extends CordovaPlugin {
         } else if (action.equals("notification_id")) {
 			// from: https://stackoverflow.com/questions/32366649/any-way-to-link-to-the-android-notification-settings-for-my-app
 			intent = new Intent();
-			if(android.os.Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1){
+			if(android.os.Build.VERSION.SDK_INT > 25){    // Build.VERSION_CODES.N_MR1
 				intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
 				intent.putExtra("android.provider.extra.APP_PACKAGE", context.getPackageName());
 			}else if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
